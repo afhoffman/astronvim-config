@@ -12,7 +12,7 @@ local config = {
   },
 
   -- Set colorscheme to use
-  colorscheme = "default_theme",
+  colorscheme = "sonokai",
 
   -- Override highlight groups in any theme
   highlights = {
@@ -34,6 +34,7 @@ local config = {
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
+      sonokai_style = "shusia"
     },
   },
   -- If you need more control, you can use the function()...end notation
@@ -168,6 +169,9 @@ local config = {
   -- Configure plugins
   plugins = {
     init = {
+      {
+        "sainnhe/sonokai"
+      }
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
 
