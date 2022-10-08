@@ -8,7 +8,7 @@ local config = {
 
   -- Configure AstroNvim updates
   updater = {
-    branch = "nightly", -- branch name (NIGHTLY ONLY)
+    channel = "stable", -- branch name (NIGHTLY ONLY)
   },
 
   -- Set colorscheme to use
@@ -157,6 +157,7 @@ local config = {
       ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+      ["<leader>bh"] = { "<cmd>HopWord<cr>", desc = "Hop to word" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     },
@@ -171,7 +172,7 @@ local config = {
     init = {
       {
         "sainnhe/sonokai"
-      }
+      },
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
 
@@ -185,7 +186,12 @@ local config = {
       --     require("lsp_signature").setup()
       --   end,
       -- },
-
+      {
+        "phaazon/hop.nvim",
+        config = function()
+          require("hop").setup()
+        end,
+      },
       -- We also support a key value style plugin definition similar to NvChad:
       -- ["ray-x/lsp_signature.nvim"] = {
       --   event = "BufRead",
