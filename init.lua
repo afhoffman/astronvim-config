@@ -160,6 +160,33 @@ local config = {
       ["<leader>bh"] = { "<cmd>HopWord<cr>", desc = "Hop to word" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+      --
+      -- Extract block doesn't need visual mode
+      ["<leader>rbb"] = { "<Cmd>lua require('refactoring').refactor('Extract Block')<CR>", noremap = true, silent = true,
+        expr = false, desc = "Extract Block" },
+
+      ["<leader>rbf"] = { "<Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", noremap = true,
+        silent = true, expr = false, desc = "Extract Block To File" },
+      -- Inline variable can also pick up the identifier currently under the cursor without visual mode
+      --
+      ["<leader>ri"] = { "<Cmd>lua require('refactoring').refactor('Inline Variable')<CR>", noremap = true, silent = true,
+        expr = false, desc = "Inline Variable" }
+    },
+    v = {
+      -- Remaps for the refactoring operations currently offered by the plugin
+      ["<leader>re"] = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>", noremap = true,
+        silent = true, expr = false, desc = "Extract Function" },
+
+      ["<leader>rf"] = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>", noremap = true,
+        silent = true, expr = false, desc = "Extract Function To File" },
+
+      ["<leader>rv"] = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>", noremap = true,
+        silent = true, expr = false, desc = "Extract Variable" },
+
+      ["<leader>ri"] = { "<Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>", noremap = true,
+        silent = true, expr = false, desc = "Inline Variable" }
+
+
     },
     t = {
       -- setting a mapping to false will disable it
@@ -172,6 +199,13 @@ local config = {
     init = {
       {
         "sainnhe/sonokai"
+      },
+      {
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+          { "nvim-lua/plenary.nvim" },
+          { "nvim-treesitter/nvim-treesitter" }
+        }
       },
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
