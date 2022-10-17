@@ -34,7 +34,7 @@ local config = {
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
-      sonokai_style = "shusia"
+      sonokai_style = "shusia",
     },
   },
   -- If you need more control, you can use the function()...end notation
@@ -162,31 +162,64 @@ local config = {
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
       --
       -- Extract block doesn't need visual mode
-      ["<leader>rbb"] = { "<Cmd>lua require('refactoring').refactor('Extract Block')<CR>", noremap = true, silent = true,
-        expr = false, desc = "Extract Block" },
+      ["<leader>rbb"] = {
+        "<Cmd>lua require('refactoring').refactor('Extract Block')<CR>",
+        noremap = true,
+        silent = true,
+        expr = false,
+        desc = "Extract Block",
+      },
 
-      ["<leader>rbf"] = { "<Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", noremap = true,
-        silent = true, expr = false, desc = "Extract Block To File" },
+      ["<leader>rbf"] = {
+        "<Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>",
+        noremap = true,
+        silent = true,
+        expr = false,
+        desc = "Extract Block To File",
+      },
       -- Inline variable can also pick up the identifier currently under the cursor without visual mode
       --
-      ["<leader>ri"] = { "<Cmd>lua require('refactoring').refactor('Inline Variable')<CR>", noremap = true, silent = true,
-        expr = false, desc = "Inline Variable" }
+      ["<leader>ri"] = {
+        "<Cmd>lua require('refactoring').refactor('Inline Variable')<CR>",
+        noremap = true,
+        silent = true,
+        expr = false,
+        desc = "Inline Variable",
+      },
     },
     v = {
       -- Remaps for the refactoring operations currently offered by the plugin
-      ["<leader>re"] = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>", noremap = true,
-        silent = true, expr = false, desc = "Extract Function" },
+      ["<leader>re"] = {
+        "<Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>",
+        noremap = true,
+        silent = true,
+        expr = false,
+        desc = "Extract Function",
+      },
 
-      ["<leader>rf"] = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>", noremap = true,
-        silent = true, expr = false, desc = "Extract Function To File" },
+      ["<leader>rf"] = {
+        "<Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>",
+        noremap = true,
+        silent = true,
+        expr = false,
+        desc = "Extract Function To File",
+      },
 
-      ["<leader>rv"] = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>", noremap = true,
-        silent = true, expr = false, desc = "Extract Variable" },
+      ["<leader>rv"] = {
+        "<Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>",
+        noremap = true,
+        silent = true,
+        expr = false,
+        desc = "Extract Variable",
+      },
 
-      ["<leader>ri"] = { "<Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>", noremap = true,
-        silent = true, expr = false, desc = "Inline Variable" }
-
-
+      ["<leader>ri"] = {
+        "<Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>",
+        noremap = true,
+        silent = true,
+        expr = false,
+        desc = "Inline Variable",
+      },
     },
     t = {
       -- setting a mapping to false will disable it
@@ -198,14 +231,14 @@ local config = {
   plugins = {
     init = {
       {
-        "sainnhe/sonokai"
+        "sainnhe/sonokai",
       },
       {
         "ThePrimeagen/refactoring.nvim",
         requires = {
           { "nvim-lua/plenary.nvim" },
-          { "nvim-treesitter/nvim-treesitter" }
-        }
+          { "nvim-treesitter/nvim-treesitter" },
+        },
       },
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
@@ -222,9 +255,7 @@ local config = {
       -- },
       {
         "phaazon/hop.nvim",
-        config = function()
-          require("hop").setup()
-        end,
+        config = function() require("hop").setup() end,
       },
       -- We also support a key value style plugin definition similar to NvChad:
       -- ["ray-x/lsp_signature.nvim"] = {
@@ -261,33 +292,45 @@ local config = {
       return config -- return final config table to use in require("null-ls").setup(config)
     end,
     treesitter = { -- overrides `require("treesitter").setup(...)`
-      -- ensure_installed = { "lua" },
+      ensure_installed = {
+        "c",
+        "dockerfile",
+        "go",
+        "help",
+        "lua",
+        "rust",
+        "vim",
+        "typescript",
+        "python",
+      },
     },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
       ensure_installed = {
-        "ansible-language-server",
-        "buf-language-server",
-        "cmake-language-server",
-        "dockerfile-language-server",
+        "ansiblels",
+        "tsserver",
         "gopls",
-        "jedi-language-server",
-        "lua-language-server",
-        "rust-analyzer",
         "taplo",
-        "typescript-language-server",
+        "jedi_language_server",
+        "cmake",
+        "sumneko_lua",
+        "dockerls",
+        "rust_analyzer",
       },
     },
     -- use mason-tool-installer to configure DAP/Formatters/Linter installation
-    ["mason-tool-installer"] = { -- overrides `require("mason-tool-installer").setup(...)`
+    ["mason-null-ls"] = { -- overrides `require("mason-tool-installer").setup(...)`
       ensure_installed = {
+        "stylua",
         "beautysh",
         "black",
         "buf",
-        "cmakelang",
-        "luaformatter",
+        "cmake_format",
         "prettier",
         "yamlfmt",
+        "hadolint",
+        "gitlint",
+        "flake8",
       },
     },
     packer = { -- overrides `require("packer").setup(...)`
