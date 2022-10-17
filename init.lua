@@ -265,11 +265,30 @@ local config = {
     },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-      -- ensure_installed = { "sumneko_lua" },
+      ensure_installed = {
+        "ansible-language-server",
+        "buf-language-server",
+        "cmake-language-server",
+        "dockerfile-language-server",
+        "gopls",
+        "jedi-language-server",
+        "lua-language-server",
+        "rust-analyzer",
+        "taplo",
+        "typescript-language-server",
+      },
     },
     -- use mason-tool-installer to configure DAP/Formatters/Linter installation
     ["mason-tool-installer"] = { -- overrides `require("mason-tool-installer").setup(...)`
-      -- ensure_installed = { "prettier", "stylua" },
+      ensure_installed = {
+        "beautysh",
+        "black",
+        "buf",
+        "cmakelang",
+        "luaformatter",
+        "prettier",
+        "yamlfmt",
+      },
     },
     packer = { -- overrides `require("packer").setup(...)`
       compile_path = vim.fn.stdpath "data" .. "/packer_compiled.lua",
