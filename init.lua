@@ -302,6 +302,7 @@ local config = {
         "vim",
         "typescript",
         "python",
+        "hcl",
       },
     },
     -- use mason-lspconfig to configure LSP installations
