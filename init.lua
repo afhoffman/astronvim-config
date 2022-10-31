@@ -294,6 +294,7 @@ local config = {
     treesitter = { -- overrides `require("treesitter").setup(...)`
       ensure_installed = {
         "c",
+        "cpp",
         "dockerfile",
         "go",
         "help",
@@ -317,6 +318,7 @@ local config = {
         "sumneko_lua",
         "dockerls",
         "rust_analyzer",
+        "clangd",
       },
     },
     -- use mason-tool-installer to configure DAP/Formatters/Linter installation
@@ -332,6 +334,7 @@ local config = {
         "hadolint",
         "gitlint",
         "flake8",
+        "clang-format",
       },
     },
     packer = { -- overrides `require("packer").setup(...)`
