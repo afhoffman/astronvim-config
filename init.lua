@@ -5,15 +5,12 @@
 -- normal format is "key = value". These also handle array like data structures
 -- where a value with no key simply has an implicit numeric key
 local config = {
-
   -- Configure AstroNvim updates
   updater = {
     channel = "stable", -- branch name (NIGHTLY ONLY)
   },
-
   -- Set colorscheme to use
   colorscheme = "sonokai",
-
   -- Override highlight groups in any theme
   highlights = {
     -- duskfox = { -- a table of overrides/changes to the default
@@ -26,7 +23,6 @@ local config = {
       return highlights
     end,
   },
-
   -- set vim options here (vim.<first_key>.<second_key> =  value)
   options = {
     opt = {
@@ -61,7 +57,6 @@ local config = {
     "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
     "    ██   ████   ████   ██ ██      ██",
   },
-
   -- Default theme configuration
   default_theme = {
     -- set the highlight style for diagnostic messages
@@ -92,13 +87,11 @@ local config = {
       ["which-key"] = true,
     },
   },
-
   -- Diagnostics configuration (for vim.diagnostics.config({...}))
   diagnostics = {
     virtual_text = true,
     underline = true,
   },
-
   -- Extend LSP configuration
   lsp = {
     -- enable servers that you already have installed without mason
@@ -142,7 +135,6 @@ local config = {
       -- }
     },
   },
-
   -- Mapping data with "desc" stored directly by vim.keymap.set().
   --
   -- Please use this mappings table to set keyboard mapping since this is the
@@ -169,7 +161,6 @@ local config = {
         expr = false,
         desc = "Extract Block",
       },
-
       ["<leader>rbf"] = {
         "<Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>",
         noremap = true,
@@ -196,7 +187,6 @@ local config = {
         expr = false,
         desc = "Extract Function",
       },
-
       ["<leader>rf"] = {
         "<Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>",
         noremap = true,
@@ -204,7 +194,6 @@ local config = {
         expr = false,
         desc = "Extract Function To File",
       },
-
       ["<leader>rv"] = {
         "<Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>",
         noremap = true,
@@ -212,7 +201,6 @@ local config = {
         expr = false,
         desc = "Extract Variable",
       },
-
       ["<leader>ri"] = {
         "<Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>",
         noremap = true,
@@ -226,43 +214,42 @@ local config = {
       -- ["<esc>"] = false,
     },
   },
-
   -- Configure plugins
   plugins = {
-      {
-        "sainnhe/sonokai",
+    {
+      "sainnhe/sonokai",
+    },
+    {
+      "ThePrimeagen/refactoring.nvim",
+      requires = {
+        { "nvim-lua/plenary.nvim" },
+        { "nvim-treesitter/nvim-treesitter" },
       },
-      {
-        "ThePrimeagen/refactoring.nvim",
-        requires = {
-          { "nvim-lua/plenary.nvim" },
-          { "nvim-treesitter/nvim-treesitter" },
-        },
-      },
-      -- You can disable default plugins as follows:
-      -- ["goolord/alpha-nvim"] = { disable = true },
+    },
+    -- You can disable default plugins as follows:
+    -- ["goolord/alpha-nvim"] = { disable = true },
 
-      -- You can also add new plugins here as well:
-      -- Add plugins, the packer syntax without the "use"
-      -- { "andweeb/presence.nvim" },
-      -- {
-      --   "ray-x/lsp_signature.nvim",
-      --   event = "BufRead",
-      --   config = function()
-      --     require("lsp_signature").setup()
-      --   end,
-      -- },
-      {
-        "phaazon/hop.nvim",
-        config = function() require("hop").setup() end,
-      },
-      -- We also support a key value style plugin definition similar to NvChad:
-      -- ["ray-x/lsp_signature.nvim"] = {
-      --   event = "BufRead",
-      --   config = function()
-      --     require("lsp_signature").setup()
-      --   end,
-      -- },
+    -- You can also add new plugins here as well:
+    -- Add plugins, the packer syntax without the "use"
+    -- { "andweeb/presence.nvim" },
+    -- {
+    --   "ray-x/lsp_signature.nvim",
+    --   event = "BufRead",
+    --   config = function()
+    --     require("lsp_signature").setup()
+    --   end,
+    -- },
+    {
+      "phaazon/hop.nvim",
+      config = function() require("hop").setup() end,
+    },
+    -- We also support a key value style plugin definition similar to NvChad:
+    -- ["ray-x/lsp_signature.nvim"] = {
+    --   event = "BufRead",
+    --   config = function()
+    --     require("lsp_signature").setup()
+    --   end,
+    -- },
     -- All other entries override the require("<key>").setup({...}) call for default plugins
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
       -- config variable is the default configuration table for the setup functino call
@@ -289,7 +276,8 @@ local config = {
       -- end
       return config -- return final config table to use in require("null-ls").setup(config)
     end,
-    treesitter = { -- overrides `require("treesitter").setup(...)`
+    treesitter = {
+      -- overrides `require("treesitter").setup(...)`
       ensure_installed = {
         "c",
         "cpp",
@@ -312,6 +300,7 @@ local config = {
         "gopls",
         "taplo",
         "jedi_language_server",
+        "pyright",
         "cmake",
         "sumneko_lua",
         "dockerls",
@@ -339,7 +328,6 @@ local config = {
     --   compile_path = vim.fn.stdpath "data" .. "/packer_compiled.lua",
     -- },
   },
-
   -- LuaSnip Options
   luasnip = {
     -- Add paths for including more VS Code style snippets in luasnip
@@ -349,7 +337,6 @@ local config = {
       javascript = { "javascriptreact" },
     },
   },
-
   -- CMP Source Priorities
   -- modify here the priorities of default cmp sources
   -- higher value == higher priority
@@ -364,7 +351,6 @@ local config = {
       path = 250,
     },
   },
-
   -- Modify which-key registration (Use this with mappings table in the above.)
   ["which-key"] = {
     -- Add bindings which show up as group name
@@ -386,7 +372,6 @@ local config = {
       },
     },
   },
-
   -- This function is run last and is a good place to configuring
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
