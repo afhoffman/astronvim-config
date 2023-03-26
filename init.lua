@@ -229,7 +229,6 @@ local config = {
 
   -- Configure plugins
   plugins = {
-    init = {
       {
         "sainnhe/sonokai",
       },
@@ -264,7 +263,6 @@ local config = {
       --     require("lsp_signature").setup()
       --   end,
       -- },
-    },
     -- All other entries override the require("<key>").setup({...}) call for default plugins
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
       -- config variable is the default configuration table for the setup functino call
@@ -337,9 +335,9 @@ local config = {
         "clang-format",
       },
     },
-    packer = { -- overrides `require("packer").setup(...)`
-      compile_path = vim.fn.stdpath "data" .. "/packer_compiled.lua",
-    },
+    -- packer = { -- overrides `require("packer").setup(...)`
+    --   compile_path = vim.fn.stdpath "data" .. "/packer_compiled.lua",
+    -- },
   },
 
   -- LuaSnip Options
