@@ -10,5 +10,6 @@ return {
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.lua" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 }
