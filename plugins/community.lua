@@ -11,5 +11,6 @@ return {
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.lua" },
-  -- { import = "astrocommunity.completion.copilot-lua-cmp" },
+
+  { import = "astrocommunity.motion.hop-nvim" },
 }
