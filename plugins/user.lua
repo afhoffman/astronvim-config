@@ -9,4 +9,10 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  {
+    "echasnovski/mini.nvim",
+    event = "User AstroFile",
+    version = false,
+    config =  function() require("mini.align").setup() end ,
+  },
 }
