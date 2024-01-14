@@ -220,6 +220,11 @@ local config = {
       "sainnhe/sonokai",
     },
     {
+      "AstroNvim/astrocommunity",
+      { import = "astrocommunity.pack.rust" },
+      { import = "astrocommunity.pack.cpp" },
+    },
+    {
       "ThePrimeagen/refactoring.nvim",
       requires = {
         { "nvim-lua/plenary.nvim" },
