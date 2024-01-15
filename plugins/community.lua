@@ -1,3 +1,10 @@
+-- Make docker compose language server attach to docker-compose.yml
+vim.filetype.add {
+  filename = {
+    ["docker-compose.yml"] = "yaml.docker-compose",
+  },
+}
+
 return {
   -- Add the community repository of plugin specifications
   "AstroNvim/astrocommunity",
