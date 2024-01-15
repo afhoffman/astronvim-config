@@ -34,4 +34,7 @@ return {
       "PeekClose",
     },
   },
+  {
+    "marko-cerovac/material.nvim",
+  },
 }
