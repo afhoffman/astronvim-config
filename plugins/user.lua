@@ -13,6 +13,10 @@ return {
     "echasnovski/mini.nvim",
     event = "User AstroFile",
     version = false,
-    config =  function() require("mini.align").setup() end ,
+    config = function() require("mini.align").setup() end,
+  },
+  {
+    "NoahTheDuke/vim-just",
+    ft = { "just" },
   },
 }
