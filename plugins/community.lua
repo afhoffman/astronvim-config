@@ -45,7 +45,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.proto" },
   { import = "astrocommunity.pack.vue" },
-  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.go" },
 
   { import = "astrocommunity.motion.hop-nvim" },
