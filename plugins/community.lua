@@ -57,6 +57,8 @@ return {
       { "<leader>2", function() require("harpoon.ui").nav_file(2) end, desc = "Harpoon file 2" },
       { "<leader>3", function() require("harpoon.ui").nav_file(3) end, desc = "Harpoon file 3" },
       { "<leader>4", function() require("harpoon.ui").nav_file(4) end, desc = "Harpoon file 4" },
-    }
-  }
+    },
+  },
+
+  { import = "astrocommunity.markdown-and-latex.vimtex" },
 }
