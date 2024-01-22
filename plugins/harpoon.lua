@@ -1,5 +1,6 @@
 local prefix = "<leader><leader>"
 local leader = "<leader>"
+local localLeader = "<localleader>"
 
 return {
   "ThePrimeagen/harpoon",
@@ -12,7 +13,7 @@ return {
   keys = {
     { prefix .. "a", function() require("harpoon"):list():append() end, desc = "Add file" },
     {
-      prefix .. "e",
+      localLeader .. "q",
       function()
         local harpoon = require "harpoon"
         harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -20,19 +21,19 @@ return {
       desc = "Toggle quick menu",
     },
     {
-      leader .. "1",
+      localLeader .. "a",
       function() require("harpoon"):list():select(1) end,
     },
     {
-      leader .. "2",
+      localLeader .. "r",
       function() require("harpoon"):list():select(2) end,
     },
     {
-      leader .. "3",
+      localLeader .. "s",
       function() require("harpoon"):list():select(3) end,
     },
     {
-      leader .. "4",
+      localLeader .. "t",
       function() require("harpoon"):list():select(4) end,
     },
   },
