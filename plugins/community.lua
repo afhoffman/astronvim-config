@@ -49,6 +49,7 @@ return {
   { import = "astrocommunity.pack.go" },
 
   { import = "astrocommunity.motion.hop-nvim" },
+  { import = "astrocommunity.motion.nvim-spider" },
 
   { import = "astrocommunity.markdown-and-latex.vimtex" },
 }
