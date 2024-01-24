@@ -18,6 +18,8 @@ return {
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
     resession_enabled = false, -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
     sonokai_style = "shusia",
+    gruvbox_style = "mix",
+    gruvbox_material_background = "medium",
     material_style = "darker",
   },
 }
