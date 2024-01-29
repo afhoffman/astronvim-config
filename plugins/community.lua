@@ -52,4 +52,6 @@ return {
   { import = "astrocommunity.motion.hop-nvim" },
 
   { import = "astrocommunity.markdown-and-latex.vimtex" },
+
+  { import = "astrocommunity.git.blame-nvim" },
 }
