@@ -19,6 +19,7 @@ return {
   -- Add some configuration when cmake-tools is active.
   {
     "Civitasv/cmake-tools.nvim",
+    commit = "aba5b805082b3c1027ac4f5051b84c61989c34c8",
     keys = {
       { "<leader>mg", "<cmd>CMakeGenerate<cr>", desc = "Generate" },
       { "<leader>mb", "<cmd>CMakeBuild<cr>", desc = "Build" },
