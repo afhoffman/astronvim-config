@@ -13,8 +13,7 @@ return {
 
   { import = "astrocommunity.colorscheme.sonokai" },
 
-  { import = "astrocommunity.pack.rust" },
-
+  { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.cpp" },
   -- Add some configuration when cmake-tools is active.
   {
@@ -40,16 +39,16 @@ return {
     end,
   },
 
-  { import = "astrocommunity.pack.python-ruff" },
-  { import = "astrocommunity.pack.docker" },
-  { import = "astrocommunity.pack.markdown" },
-  { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.proto" },
-  { import = "astrocommunity.pack.vue" },
-  { import = "astrocommunity.pack.typescript-all-in-one" },
-  { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.astro" },
-  { import = "astrocommunity.pack.cmake" },
+  { import = "astrocommunity.pack.docker" },
+  { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.proto" },
+  { import = "astrocommunity.pack.python-ruff" },
+  { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.typescript-all-in-one" },
+  { import = "astrocommunity.pack.vue" },
 
   { import = "astrocommunity.motion.hop-nvim" },
 
