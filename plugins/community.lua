@@ -46,7 +46,6 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.proto" },
   { import = "astrocommunity.pack.python-ruff" },
-  { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.vue" },
 
